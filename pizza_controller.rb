@@ -28,3 +28,10 @@ post('/pizza-orders') do
   @pizza.save()
   erb(:create)
 end
+
+post('/pizza-orders/:id/delete') do
+  id = params[:id].to_i()
+  @pizza = PizzaOrder.find(id)
+  @pizza.delete()
+  erb(:destroy)
+end

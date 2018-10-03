@@ -4,4 +4,8 @@
 <p>Name: <%= @pizza.pretty_name() %></p>
 <p>quantity: <%= @pizza.quantity() %> </p>
 <p>Topping: <%= @pizza.topping() %></p>
+
+<form action="/pizza-orders/<%= @pizza.id %>/delete" method="post">
+<input type="submit" value="Delete Order">
+</form>
 <hr />
