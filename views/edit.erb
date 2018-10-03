@@ -1,0 +1,38 @@
+<form action="/pizza-orders/<%= @pizza.id %>" method="post">
+
+  <label for="first-name-field">First Name</label>
+  <input
+    type="text"
+    name="first_name"
+    id=first-name-field
+    value="<%= @pizza.first_name %>"
+     />
+
+  <label for="last-name-field">Last Name</label>
+  <input
+    type="text"
+    name="last_name"
+    id=last-name-field
+    value="<%= @pizza.last_name %>"
+    />
+
+  <label for="topping-field">Choose your Topping</label>
+  <select name="topping" id="topping-select" >
+    <option value="" disabled selected>Choose</option>
+    <option value="Margherita">Margherita</option>
+    <option value="Pepperoni">Pepperoni</option>
+
+  </select>
+
+  <label for="quantity-field">Quantity</label>
+  <input
+    type="number"
+    name="quantity"
+    min="1"
+    max="50"
+    id=quantity-field
+    value="<%= @pizza.quantity %>" />
+
+  <input type="submit" value="Edit Pizza">
+
+</form>

@@ -35,3 +35,16 @@ post('/pizza-orders/:id/delete') do
   @pizza.delete()
   erb(:destroy)
 end
+
+
+get("/pizza-orders/:id/edit")do
+  id = params[:id].to_i()
+  @pizza = PizzaOrder.find(id)
+  erb(:edit)
+end
+
+post("/pizza-orders/:id")do
+@pizza = PizzaOrder.new(params)
+@pizza.update()
+erb(:update)
+end
